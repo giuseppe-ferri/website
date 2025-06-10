@@ -10,15 +10,24 @@
       height: 360px;
       width: 100%;
       object-fit: cover;
+      margin-bottom: 16px;
     }
   </style>
 </head>
 <body>
+  {% include 'nav.html' %}
   <div class="container">
     <h1 class="text-center mt-3 mb-4">{{company_name}} Careers</h1>
     <img class="img-fluid" id="banner" src="https://media4.giphy.com/media/h9XhGF0cMWazK/giphy.webp?cid=ecf05e47dwdp3o8res462dxs6br1l64jy88pdfdkg5b33omd&ep=v1_gifs_search&rid=giphy.webp&ct=g">
     <h2 class="text-center mt-5 mb-4">About {{company_name}}</h2>
+    <div class="row" style="margin-bottom: 16px;">
+    <div class="col-6">
     <p class="lead">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+    </div>
+    <div class="col-6">
+      <img src="../static/codes.jpeg" style="height:320px;">
+    </div>
+  </div>
     <h2 class="text-center mt-5 mb-4">Open positions</h2>
     <div>
       {% for job in jobs %}
@@ -27,9 +36,10 @@
     </div>
     <p>TODO - Show the jobs here</p>
     <div class="text-center">
-      <button class="btn btn-primary btn-lg" type="button">Contact Us</button>
+      <a class="btn btn-primary btn-lg" type="button" href="mailto:gferri.dev@gmail.com?subject=Questions%20about%20{{company_name}}%20careers&body=My%20name%3A%20%3Cyour%20name%20here%3E%0D%0AMy%20question%3A%20%3Cyour%20question%20here%3E">Contact Us</a>
       <p>Copyright 2025, {{company_name}}</p>
     </div>
   </div>
+  {% include 'footer.html' %}
 </body>
 </html>
